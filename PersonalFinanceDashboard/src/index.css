@@ -1,0 +1,56 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+
+  /* colors variable for light mode */
+  /* --L- -color */
+  --L-bg-color:#f6f9fc; 
+  --L-text-color: #1f2c73;
+  --L-H5-color: #7193c9;
+  
+  /* colors variable for dark mode */
+   /* --D- -color */
+   --D-bg-color:#131129; 
+   --D-text-color: #ffffff;
+   --D-H5-color: #717b98;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.dark body {
+  background-color: var(--D-bg-color);
+  color: var(--D-text-color);
+}
+
+.light body {
+  background-color: var(--L-bg-color);
+  color: var(--L-text-color);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+
+h5 {
+  font-size: 16px;
+}
+
+.light h5 {
+  color: var(--L-H5-color);
+}
+
+.dark h5 {
+  color: var(--D-H5-color);
+}
+
+

@@ -1,0 +1,18 @@
+[
+  {
+    "PlayerName": "John Doe",
+    "Points": 22,
+    "Assists": 6,
+    "Rebounds": 11,
+    "Turnovers": 4,
+    "MinutesPlayed": 34
+  },
+  {
+    "PlayerName": "Jane Smith",
+    "Points": 18,
+    "Assists": 9,
+    "Rebounds": 7,
+    "Turnovers": 2,
+    "MinutesPlayed": 28
+  }
+]
