@@ -13,24 +13,28 @@ import Analytics from "../pages/Analytics";
 import Notifications from "../pages/Notifications";
 import SignUp from "../pages/SignUp";
 import Empty from "../pages/Empty";
+import ProtectedRoute from "../components/auth/ProtectedRoute";
 
 
 const router = createBrowserRouter([
 
   {
-    path: '/',
-    element: <Layout />,
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
-      { index: true, element: <Dashboard /> }, 
-      { path: 'dashboard', element: <Dashboard /> },
-      { path: 'wallets', element: <Wallets /> },
-      { path: 'budgets', element: <Budgets /> },
-      { path: 'goals', element: <Goals /> },
-      { path: 'profile', element: <Profile /> },
-      { path: 'analytics', element: <Analytics /> },
-      { path: 'notification', element: <Notifications /> },
-
-    ]
+      { index: true, element: <Dashboard /> },
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "wallets", element: <Wallets /> },
+      { path: "budgets", element: <Budgets /> },
+      { path: "goals", element: <Goals /> },
+      { path: "profile", element: <Profile /> },
+      { path: "analytics", element: <Analytics /> },
+      { path: "notification", element: <Notifications /> },
+    ],
   },
   {
     path: '/login',
@@ -38,15 +42,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/signup',
-    element: <SignUp/>
+    element: <SignUp />
   },
-  {
-    path: '/empty',
-    element: <Empty/>
-  }
 
 
-  
+
+
 
 ]);
 

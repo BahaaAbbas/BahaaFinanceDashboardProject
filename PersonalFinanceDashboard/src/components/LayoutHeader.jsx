@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Icons } from './Icons'
 import { useTheme } from '../contexts/ThemeContext';
 import { FaCheckCircle, FaTimesCircle, FaExclamationTriangle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaWallet, FaCog, FaSignOutAlt } from "react-icons/fa";
 import Blogo from '../assets/b.jpg'
+import { useAuth } from "../components/auth/AuthContext";
 
 const LayoutHeader = () => {
     const notifications = [
@@ -30,6 +31,14 @@ const LayoutHeader = () => {
         },
     ];
 
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
+
     const { theme, toggleTheme } = useTheme();
     const [clickNotify, setClickNotify] = useState(false);
     const [clickProfile, setClickProfile] = useState(false);
@@ -47,7 +56,7 @@ const LayoutHeader = () => {
     };
 
     const ClickToggle = () => {
-       toggleTheme();
+        toggleTheme();
         setClickNotify(false);
         setClickProfile(false);
 
@@ -83,7 +92,7 @@ const LayoutHeader = () => {
                     dark:text-[#fba809] 
                     cursor-pointer'
                         onClick={
-                            
+
                             ClickToggle
 
                         }
@@ -177,13 +186,13 @@ const LayoutHeader = () => {
                                     <FaWallet className="text-indigo-500" />
                                     <span className=" text-gray-700 dark:text-[#7a78ad] font-semibold">Wallets</span>
                                 </Link>
-                                <Link
-                                    to="/login"
-                                    className="flex items-center space-x-3 cursor-pointer hover:text-red-500 no-underline hover:no-underline "
+                                <div
+                                    onClick={handleLogout}
+                                    className="flex items-center space-x-3 cursor-pointer hover:text-red-500 no-underline hover:no-underline"
                                 >
                                     <FaSignOutAlt className="text-red-500" />
-                                    <span className="font-semibold text-red-500 ">Logout</span>
-                                </Link>
+                                    <span className="font-semibold text-red-500">Logout</span>
+                                </div>
                             </div>
                         </div>
 
