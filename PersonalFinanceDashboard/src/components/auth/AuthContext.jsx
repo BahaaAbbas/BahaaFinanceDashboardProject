@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { signUp, logIn } from "../auth/Auth";
+import { signUp, logIn , USERS_KEY } from "../auth/Auth";
 
 const AuthContext = createContext();
 
@@ -13,14 +13,17 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-     await logIn(email, password); // Validate login
+      await logIn(email, password); // Validate login
+      const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+      const user = users.find(user => user.email === email); // Find the logged-in user
       setIsAuthenticated(true);
-      setCurrentUser(email); // Save user in state
-      localStorage.setItem("currentUser", JSON.stringify(email)); // Persist login
+      setCurrentUser(user); // Save the entire user object (including name)
+      localStorage.setItem("currentUser", JSON.stringify(user)); // Persist login
     } catch (error) {
       throw new Error(error.message);
     }
   };
+  
 
   const signup = (fullName, email, password) => {
     try {

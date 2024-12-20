@@ -1,4 +1,4 @@
-const USERS_KEY = "users";
+export const USERS_KEY = "users";
 
 // Save user to localStorage
 export const signUp = (fullName, email, password) => {
@@ -6,7 +6,20 @@ export const signUp = (fullName, email, password) => {
   if (users.some(user => user.email === email)) {
     throw new Error("User already exists!");
   }
-  users.push({ fullName, email, password });
+
+  // Format the registration date
+  const currentDate = new Date();
+  const options = { month: "short", day: "numeric", year: "numeric" };
+  const formattedDate = currentDate.toLocaleDateString("en-US", options);
+  
+  // Add the new user with the registration date
+  users.push({
+    fullName,
+    email,
+    password,
+    registeredDate: formattedDate,
+  });
+
   localStorage.setItem(USERS_KEY, JSON.stringify(users));
 };
 

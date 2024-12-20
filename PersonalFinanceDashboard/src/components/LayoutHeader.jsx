@@ -8,6 +8,7 @@ import Blogo from '../assets/b.jpg'
 import { useAuth } from "../components/auth/AuthContext";
 
 const LayoutHeader = () => {
+    
     const notifications = [
         {
             icon: <FaCheckCircle className="text-green-500" />,
@@ -31,7 +32,7 @@ const LayoutHeader = () => {
         },
     ];
 
-    const { logout } = useAuth();
+    const { logout , currentUser  } = useAuth();
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -165,8 +166,12 @@ const LayoutHeader = () => {
                                     className="w-12 h-12 rounded-full"
                                 />
                                 <div>
-                                    <h3 className="font-semibold text-lg text-gray-800 dark:text-white">Bahaa Abbas</h3>
-                                    <p className="text-sm text-gray-500 dark:text-[#7a78ad] font-semibold">bahaa@email.com</p>
+                                    <h3 className="font-semibold text-lg text-gray-800 dark:text-white">
+                                    {currentUser?.fullName || "Bahaa Abbas"} 
+                                        </h3>
+                                    <p className="text-sm text-gray-500 dark:text-[#7a78ad] font-semibold">
+                                    {currentUser?.email || "bahaa12345@email.com"} 
+                                        </p>
                                 </div>
                             </div>
 

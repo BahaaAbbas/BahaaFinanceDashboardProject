@@ -28,7 +28,7 @@ const Login = () => {
           <p className="text-gray-300">Log in to access your account.</p>
         </div>
         <div className="w-1/2 p-8">
-          <h2 className="text-2xl font-bold mb-6">Sign In</h2>
+          <h2 className="text-2xl font-bold mb-6">Log In</h2>
           {error && <p className="text-red-500">{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">

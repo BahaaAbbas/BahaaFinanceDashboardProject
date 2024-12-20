@@ -4,8 +4,11 @@ import { BsCash } from "react-icons/bs";
 import ProfileBudget from './ProfileBudget';
 import BLogo from '../../assets/b.jpg'
 import { Icons } from '../Icons';
+import { useAuth } from '../auth/AuthContext';
 
 const ProfileHolder = () => {
+
+    const { currentUser } = useAuth();
 
     const chartData = {
         labels: ["4 Jan", "5 Jan", "6 Jan", "7 Jan", "8 Jan", "9 Jan", "10 Jan", "11 Jan", "12 Jan", "13 Jan", "14 Jan", "15 Jan"],
@@ -33,11 +36,11 @@ const ProfileHolder = () => {
                         alt="Profile"
                         className="w-20 h-20 rounded-full mx-auto mb-4"
                     />
-                    <h2 className="font-bold text-lg">Henry John Paulin</h2>
-                    <p className="text-gray-500 font-semibold">henry@gmail.com</p>
+                    <h2 className="font-bold text-lg">{currentUser.fullName}</h2>
+                    <p className="text-gray-500 font-semibold">{currentUser.email}</p>
                     <div className="flex  mx-8 my-4  gap-2">
                         <span className='font-bold'>Registered: </span>
-                        <span className='text-[#aeafd6] font-semibold'>25 June 2024</span>
+                        <span className='text-[#aeafd6] font-semibold'> {currentUser.registeredDate}</span>
 
                     </div>
                     <hr />

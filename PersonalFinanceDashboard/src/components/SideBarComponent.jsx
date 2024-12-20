@@ -19,13 +19,13 @@ export default function Sidebar({ children }) {
 
   return (
     <aside className="h-screen z-1000">
-      <nav className="h-full flex flex-col bg-[#bebaba]  shadow-sm">
+      <nav className="h-full flex flex-col bg-[#254c80]  shadow-sm">
         <div
           className="p-4 flex justify-center items-center ">
           <img
             onClick={handleLogoClick}
             src={BLogo}
-            className="w-8 h-12 cursor-pointer mix-blend-multiply "
+            className="w-8 h-12 cursor-pointer  "
             alt="Logo"
           />
 
