@@ -36,4 +36,4 @@ The **Personal Finance Dashboard** is a sleek and easy-to-use React application 
 
 ##Screenshots
 
--![Finance Dashboard](https://drive.google.com/file/d/1FVwSLOvfpUgKGPDGBC2bI_5jAlO0pMW0/view?usp=drive_link)
+- ![Finance Dashboard](https://drive.google.com/file/d/1FVwSLOvfpUgKGPDGBC2bI_5jAlO0pMW0/view?usp=drive_link)
