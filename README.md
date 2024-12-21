@@ -34,6 +34,30 @@ The **Personal Finance Dashboard** is a sleek and easy-to-use React application 
 - Adding advanced analytics, including trend analysis and predictive insights
 
 
-##Screenshots
+## Screenshots
 
-- ![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/a1.PNG?raw=true)
+ ![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/a1.PNG?raw=true)
+ 
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/a2.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/aaaa1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/aaaaaaaa.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/b1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/b2.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d2.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d3.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d4.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d5.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d6.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d7.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/d8.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/l11.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/ll23.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/n1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/p1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/p2.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/w1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/w2.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/y1.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/y2.PNG?raw=true)
+![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/y3.PNG?raw=true)
