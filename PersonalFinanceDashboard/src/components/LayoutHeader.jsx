@@ -109,7 +109,7 @@ const LayoutHeader = () => {
                         />
 
                         {/* Notification Component */}
-                        <div className={`${clickNotify === true ? 'z-100 opacity-100' : 'opacity-0'} absolute right-1 top-12 w-[350px] p-4 mb-2 bg-white rounded-md shadow-md border border-gray-200 dark:bg-[#1d1933]`}>
+                        <div className={`${clickNotify === true ? 'z-100 opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} absolute right-1 top-12 w-[350px] p-4 mb-2 bg-white rounded-md shadow-md border border-gray-200 dark:bg-[#1d1933]`}>
                             <h1 className="text-lg font-semibold  mb-4">Recent Notification</h1>
                             <div className="space-y-4">
                                 {notifications.map((notification, index) => (
@@ -157,7 +157,7 @@ const LayoutHeader = () => {
 
 
                         {/* Profile Component */}
-                        <div className={`bg-white dark:bg-[#1d1933] shadow-md rounded-lg p-4  absolute right-1 top-12 w-64 ${clickProfile === true ? 'z-100 opacity-100' : 'opacity-0'}`}>
+                        <div className={`bg-white dark:bg-[#1d1933] shadow-md rounded-lg p-4  absolute right-1 top-12 w-64 ${clickProfile === true ? 'z-100 opacity-100' : 'opacity-0 hidden'}`}>
                             {/* User Info */}
                             <div className="flex items-center space-x-4 mb-4">
                                 <img

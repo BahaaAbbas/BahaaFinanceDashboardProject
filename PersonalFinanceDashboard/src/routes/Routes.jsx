@@ -12,7 +12,6 @@ import Profile from "../pages/Profile";
 import Analytics from "../pages/Analytics";
 import Notifications from "../pages/Notifications";
 import SignUp from "../pages/SignUp";
-import Empty from "../pages/Empty";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 
 
@@ -44,10 +43,7 @@ const router = createBrowserRouter([
     path: '/signup',
     element: <SignUp />
   },
-  {
-    path: '/empty',
-    element: <Empty />
-  }
+ 
 
 
 

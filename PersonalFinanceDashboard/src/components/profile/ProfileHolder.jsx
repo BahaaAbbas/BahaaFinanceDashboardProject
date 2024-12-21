@@ -28,13 +28,13 @@ const ProfileHolder = () => {
 
 
             {/* Left Sidebar */}
-            <div className="w-[350px] bg-white p-6 rounded-lg shadow-md">
+            <div className="w-[350px] bg-white  dark:bg-[#1d1933] p-6 rounded-lg shadow-md">
                 {/* Profile Section */}
                 <div className="text-center ">
                     <img
                         src={BLogo}
                         alt="Profile"
-                        className="w-20 h-20 rounded-full mx-auto mb-4"
+                        className="w-24 h-24 rounded-full mx-auto mb-4  "
                     />
                     <h2 className="font-bold text-lg">{currentUser.fullName}</h2>
                     <p className="text-gray-500 font-semibold">{currentUser.email}</p>
@@ -67,7 +67,7 @@ const ProfileHolder = () => {
 
                             <span >Debit Card</span>
                         </div>
-                        <Icons.LeftArrowIcon className='font-bold text-2xl text-[#d0d0e6]' />
+                        <Icons.LeftArrowIcon className='font-bold text-2xl text-[#bdc6df]' />
                     </div>
 
                     <div className="flex items-center justify-between text-indigo-600 cursor-pointer">
@@ -78,7 +78,7 @@ const ProfileHolder = () => {
 
                             <span >Visa Card</span>
                         </div>
-                        <Icons.LeftArrowIcon className='font-bold text-2xl text-[#d0d0e6]' />
+                        <Icons.LeftArrowIcon className='font-bold text-2xl text-[#bdc6df]' />
                     </div>
 
                     <div className="flex items-center justify-between text-indigo-600 cursor-pointer">
@@ -89,7 +89,7 @@ const ProfileHolder = () => {
 
                             <span >Cash</span>
                         </div>
-                        <Icons.LeftArrowIcon className='font-bold text-2xl text-[#d0d0e6]' />
+                        <Icons.LeftArrowIcon className='font-bold text-2xl text-[#bdc6df]' />
                     </div>
 
 

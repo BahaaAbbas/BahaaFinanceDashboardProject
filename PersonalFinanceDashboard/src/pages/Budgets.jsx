@@ -19,7 +19,7 @@ const Budgets = () => {
     <div className=' flex flex-col gap-6'>
 
       <div className=''>
-        <PagesHeader title={'budgets'} />
+        <PagesHeader title={'Budgets'} />
       </div>
 
       
