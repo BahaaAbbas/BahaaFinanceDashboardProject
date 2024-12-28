@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaUniversity, FaWallet } from 'react-icons/fa';
 import { SiVisa } from 'react-icons/si';
 import { Icons } from '../Icons';
@@ -6,6 +6,9 @@ import WalletsCard from './WalletsCard';
 import WalletBalanceOvertime from './WalletBalanceOvertime';
 import WalletTransactionHistory from './WalletTransactionHistory';
 import VisaIMG from '../../assets/visa.jpeg'
+import { useSearchParams } from 'react-router-dom';
+import { useComponentWidthContext } from '../../contexts/ComponentWidthContext';
+
 const WalletsHolder = ({ walArr }) => {
 
     // Wallets Card Array of objects..
@@ -84,6 +87,21 @@ const WalletsHolder = ({ walArr }) => {
 
     const [TitleName, setTitleName] = useState('Debit Card');
 
+
+
+    const [searchParams] = useSearchParams();
+    const componentName = searchParams.get('component');
+    const { componentWidth , setDynamicWidth } = useComponentWidthContext();
+
+    useEffect(() => {
+
+        if (componentName === 'wallet') {
+            setDynamicWidth('full');
+        }
+        else {
+            setDynamicWidth('700px');
+        }
+    }, [componentName, setDynamicWidth]);
 
 
     return (

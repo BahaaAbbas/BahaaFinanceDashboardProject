@@ -1,16 +1,18 @@
 import React, { useContext } from 'react';
 import { DashboardDataContext } from '../../contexts/DashboardDataContext';
+import { useComponentWidthContext } from '../../contexts/ComponentWidthContext';
 
 
 const MonthlyExpenses = () => {
+  const { componentWidth } = useComponentWidthContext();
 
 
   const dashboardData = useContext(DashboardDataContext);
-
+ 
   return (
     <div className="mt-6">
       {/* Main container */}
-      <div className="w-[500px] h-auto border border-[#e5eaef] bg-[#ffffff] rounded-md dark:bg-[#1d1933]">
+      <div className={`${componentWidth === 'w-[700px]' ? 'w-[500px]' : componentWidth} h-auto border border-[#e5eaef] bg-[#ffffff] rounded-md dark:bg-[#1d1933]`}>
         {/* Header */}
         <div className="dark:border-b-[#2f2b43] mt-3 mx-4 space-y-4">
           <h4 className="text-[#1f2c73] font-bold dark:text-white">
@@ -20,7 +22,7 @@ const MonthlyExpenses = () => {
 
         {/* Progress line */}
         <div className="mt-4 mx-4">
-          <ProgressBar  />
+          <ProgressBar />
         </div>
 
 

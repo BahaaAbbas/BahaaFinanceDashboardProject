@@ -13,7 +13,7 @@ import Analytics from "../pages/Analytics";
 import Notifications from "../pages/Notifications";
 import SignUp from "../pages/SignUp";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
-
+import SearchViewer from "../pages/SearchViewer";
 
 const router = createBrowserRouter([
 
@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       { path: "profile", element: <Profile /> },
       { path: "analytics", element: <Analytics /> },
       { path: "notification", element: <Notifications /> },
+      { path: "searchviewer", element: <SearchViewer /> },
     ],
   },
   {
@@ -43,7 +44,8 @@ const router = createBrowserRouter([
     path: '/signup',
     element: <SignUp />
   },
- 
+
+
 
 
 

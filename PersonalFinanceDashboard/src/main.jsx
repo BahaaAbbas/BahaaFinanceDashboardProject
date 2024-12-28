@@ -8,6 +8,8 @@ import router from './routes/Routes.jsx';
 import { ThemeProvider } from './contexts/ThemeContext.jsx';
 import { DashboardDataProvider } from './contexts/DashboardDataContext.jsx';
 import { AuthProvider } from './components/auth/AuthContext.jsx';
+import { GlobalProvider } from './contexts/GlobalMappingContext.jsx';
+import { ComponentWidthProvider } from './contexts/ComponentWidthContext.jsx';
 
 
 
@@ -16,9 +18,13 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
       <DashboardDataProvider>
-        <ThemeProvider>
-          <RouterProvider router={router} />
-        </ThemeProvider>
+        <ComponentWidthProvider>
+          <GlobalProvider>
+            <ThemeProvider>
+              <RouterProvider router={router} />
+            </ThemeProvider>
+          </GlobalProvider>
+        </ComponentWidthProvider>
       </DashboardDataProvider>
     </AuthProvider>
 

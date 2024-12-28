@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import PagesHeader from '../components/PagesHeader'
 import DashboardCard from '../components/dashboard/DashboardCard'
 import { Icons } from '../components/Icons';
@@ -11,10 +11,36 @@ import MonthlyIncomeVsExpenses from '../components/dashboard/MonthlyIncomeVsExpe
 import WeeklyExpenses from '../components/dashboard/WeeklyExpenses';
 import BalaceTrends from '../components/dashboard/BalaceTrends';
 import { DashboardDataContext } from '../contexts/DashboardDataContext';
+import { useComponentWidthContext } from '../contexts/ComponentWidthContext';
+import { useSearchParams } from 'react-router-dom';
 
 const Dashboard = () => {
 
- const dashboardData = useContext(DashboardDataContext);
+  const dashboardData = useContext(DashboardDataContext);
+  const { componentWidth, setDynamicWidth } = useComponentWidthContext();
+
+  const [searchParams] = useSearchParams();
+  const componentName = searchParams.get('component');
+
+
+  useEffect(() => {
+
+    if (componentName === 'balancetrends') {
+      setDynamicWidth('700px');
+    }
+    else if (componentName === 'total') {
+      setDynamicWidth('full');
+    }
+    else if (componentName === 'weekly') {
+      setDynamicWidth('700px');
+    }
+    else if (componentName === 'transaction') {
+      setDynamicWidth('700px');
+    }
+    else {
+      setDynamicWidth('700px');
+    }
+  }, [componentName, setDynamicWidth]);
 
   return (
     <div className=' flex flex-col gap-6'>
@@ -30,23 +56,23 @@ const Dashboard = () => {
 
       <div className=' flex justify-between items-start'>
         <BalaceTrends />
-        <MonthlyExpenses  />
+        <MonthlyExpenses />
       </div>
 
       <div className=' flex justify-between items-start'>
-        <MonthlyBudgets  />
-        <MonthlyIncomeVsExpenses  />
+        <MonthlyBudgets />
+        <MonthlyIncomeVsExpenses />
       </div>
 
       <div className=' flex justify-between items-start'>
-        <WeeklyExpenses  />
-        <PaymentsHistory  />
+        <WeeklyExpenses />
+        <PaymentsHistory />
       </div>
 
 
       <div className=' flex justify-between items-start'>
-        <SavingGoals  />
-        <TransactionHistory  />
+        <SavingGoals />
+        <TransactionHistory />
       </div>
 
 

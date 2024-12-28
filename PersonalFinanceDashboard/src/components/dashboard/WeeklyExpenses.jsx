@@ -10,15 +10,17 @@ import {
   Legend,
 } from 'recharts';
 import { DashboardDataContext } from '../../contexts/DashboardDataContext';
+import { useComponentWidthContext } from '../../contexts/ComponentWidthContext'; 
 
 const WeeklyExpenses = () => {
 
   const dashboardData = useContext(DashboardDataContext);
+  const { componentWidth} = useComponentWidthContext();
 
   return (
     <div className="mt-6">
       {/* Main container */}
-      <div className="w-[700px] h-auto border border-[#e5eaef] bg-[#ffffff] rounded-md dark:bg-[#1d1933] p-4">
+      <div className=  {`${componentWidth} h-auto border border-[#e5eaef] bg-[#ffffff] rounded-md dark:bg-[#1d1933] p-4`}>
         {/* Header */}
         <div className="dark:border-b-[#2f2b43] mb-6">
           <h4 className="text-[#1f2c73] font-bold dark:text-white">

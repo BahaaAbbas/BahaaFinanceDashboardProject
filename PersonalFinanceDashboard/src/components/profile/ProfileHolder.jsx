@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaUniversity, FaCreditCard, FaWallet } from "react-icons/fa";
 import { BsCash } from "react-icons/bs";
 import ProfileBudget from './ProfileBudget';
 import BLogo from '../../assets/b.jpg'
 import { Icons } from '../Icons';
 import { useAuth } from '../auth/AuthContext';
+import { useComponentWidthContext } from '../../contexts/ComponentWidthContext';
+import { useSearchParams } from 'react-router-dom';
 
 const ProfileHolder = () => {
 
@@ -22,6 +24,22 @@ const ProfileHolder = () => {
             },
         ],
     };
+
+    const [searchParams] = useSearchParams();
+    const componentName = searchParams.get('component');
+    const { componentWidth, setDynamicWidth } = useComponentWidthContext();
+
+    useEffect(() => {
+
+        if (componentName === 'profile') {
+            setDynamicWidth('full');
+        }
+        else {
+            setDynamicWidth('700px');
+        }
+    }, [componentName, setDynamicWidth]);
+
+
 
     return (
         <div className='flex gap-10'>

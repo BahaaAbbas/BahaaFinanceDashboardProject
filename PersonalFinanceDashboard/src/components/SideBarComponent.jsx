@@ -1,11 +1,20 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState, useEffect } from "react";
 import BLogo from '../assets/b.jpg'
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./auth/AuthContext";
 
 const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
+
+  const { currentUser } = useAuth();
   const [UserName, setUserName] = useState('BA');
+  useEffect(() => {
+    if (currentUser && currentUser.fullName) {
+      setUserName(currentUser.fullName.slice(0, 2).toUpperCase()); 
+    }
+  }, [currentUser]);
+
   console.log(UserName)
   const navigate = useNavigate();
 

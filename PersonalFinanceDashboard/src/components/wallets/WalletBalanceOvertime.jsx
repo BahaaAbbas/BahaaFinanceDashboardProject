@@ -1,17 +1,21 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, Area, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useComponentWidthContext } from '../../contexts/ComponentWidthContext';
+
 
 const WalletBalanceOvertime = () => {
     const { theme } = useTheme();
+    const { componentWidth } = useComponentWidthContext();
+
 
     const daysInMonth = {
         Jan: 31, Feb: 28, Mar: 31, Apr: 30, May: 31, Jun: 30,
         Jul: 31, Aug: 31, Sep: 30, Oct: 31, Nov: 30, Dec: 31,
     };
-    
+
     const currentMonth = new Date().toLocaleString('default', { month: 'short' });
-    
+
     const BalanceTrendsArray = Array.from({ length: daysInMonth[currentMonth] }, (_, index) => ({
         day: index + 1,
         date: `${index + 1}-${currentMonth}`, // Add formatted date string
@@ -21,7 +25,7 @@ const WalletBalanceOvertime = () => {
     return (
         <div className="mt-6">
             {/* Main container */}
-            <div className="w-full h-auto border border-[#e5eaef] bg-[#ffffff] rounded-md dark:bg-[#1d1933]">
+            <div className={`${componentWidth} h-auto border border-[#e5eaef] bg-[#ffffff] rounded-md dark:bg-[#1d1933]`}>
                 {/* Header */}
                 <div className="flex items-center justify-between p-4">
                     <div>

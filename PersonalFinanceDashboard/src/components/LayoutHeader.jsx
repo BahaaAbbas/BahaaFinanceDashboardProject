@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Icons } from './Icons'
 import { useTheme } from '../contexts/ThemeContext';
 import { FaCheckCircle, FaTimesCircle, FaExclamationTriangle } from 'react-icons/fa';
@@ -6,9 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaWallet, FaCog, FaSignOutAlt } from "react-icons/fa";
 import Blogo from '../assets/b.jpg'
 import { useAuth } from "../components/auth/AuthContext";
+import useDebounce from './hooks/useDebounceHook';
+import { useGlobalContext } from '../contexts/GlobalMappingContext';
 
 const LayoutHeader = () => {
-    
+
     const notifications = [
         {
             icon: <FaCheckCircle className="text-green-500" />,
@@ -32,13 +34,58 @@ const LayoutHeader = () => {
         },
     ];
 
-    const { logout , currentUser  } = useAuth();
-    const navigate = useNavigate();
-
+    const { logout, currentUser } = useAuth();
     const handleLogout = () => {
         logout();
         navigate("/login");
     };
+
+
+    const navigate = useNavigate();
+    const [searchTerm, setSearchTerm] = useState('');
+    const debouncedSearchTerm = useDebounce(searchTerm, 500);
+    const { componentsMap } = useGlobalContext();
+    const inputRef = useRef(null);
+
+    const handleFocus = () => {
+        if (inputRef.current) {
+            inputRef.current.style.borderColor = 'green';
+            inputRef.current.style.borderWidth = '2px';
+        }
+        if (inputRef.current.type !== 'text') {
+            navigate('/'); // Redirect to "/"
+        }
+    };
+
+    const handleBlur = () => {
+        if (inputRef.current) {
+            inputRef.current.style.borderColor = ''; 
+            inputRef.current.style.borderWidth = '';
+        }
+    };
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+
+        
+        if (value.trim() === '') {
+            navigate('/');
+        }
+    };
+
+    useEffect(() => {
+        if (debouncedSearchTerm.trim()) {
+            const normalizedSearchTerm = debouncedSearchTerm.trim().toLowerCase();
+            const componentName = componentsMap[normalizedSearchTerm];
+            if (componentName) {
+                navigate(`/searchviewer?component=${normalizedSearchTerm}`);
+            }
+            else {
+                navigate('/');
+            }
+        }
+    }, [debouncedSearchTerm, componentsMap, navigate]);
 
     const { theme, toggleTheme } = useTheme();
     const [clickNotify, setClickNotify] = useState(false);
@@ -76,6 +123,12 @@ const LayoutHeader = () => {
                         "
                         placeholder="Search Here"
                         type="text"
+                        value={searchTerm}
+                        
+                        ref={inputRef}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        onChange={handleChange}
                     />
 
 
@@ -167,11 +220,11 @@ const LayoutHeader = () => {
                                 />
                                 <div>
                                     <h3 className="font-semibold text-lg text-gray-800 dark:text-white">
-                                    {currentUser?.fullName || "Bahaa Abbas"} 
-                                        </h3>
+                                        {currentUser?.fullName || "Bahaa Abbas"}
+                                    </h3>
                                     <p className="text-sm text-gray-500 dark:text-[#7a78ad] font-semibold">
-                                    {currentUser?.email || "bahaa12345@email.com"} 
-                                        </p>
+                                        {currentUser?.email || "bahaa12345@email.com"}
+                                    </p>
                                 </div>
                             </div>
 
