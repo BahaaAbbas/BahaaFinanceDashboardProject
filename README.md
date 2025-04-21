@@ -33,11 +33,11 @@ The **Personal Finance Dashboard** is a sleek and easy-to-use React application 
 - Storing data locally or in a database for persistence
 - Adding advanced analytics, including trend analysis and predictive insights
 
-
+![Finance Dashboard](https://github.com/BahaaAbbas/BahaaFinanceDashboardProject/raw/main/PersonalFinanceDashboard/src/assets/ReadmeImages/a1.PNG)
+![Finance Dashboard](https://github.com/BahaaAbbas/BahaaFinanceDashboardProject/raw/main/PersonalFinanceDashboard/src/assets/ReadmeImages/a2.PNG)
 ## Screenshots
 
  ![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/a1.PNG?raw=true)
- 
 ![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/a2.PNG?raw=true)
 ![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/aaaa1.PNG?raw=true)
 ![Finance Dashboard](https://github.com/BahaaAbbas/ImagesHolder/blob/main/PersonalDashboard/aaaaaaaa.PNG?raw=true)
